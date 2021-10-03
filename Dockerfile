@@ -12,7 +12,7 @@ RUN curl -L -o /binaries/opa https://openpolicyagent.org/downloads/latest/opa_li
 
 #stage 2
 # action image
-FROM alpine
+FROM ubuntu:18.04
 COPY --from=binary-builder /binaries/opa /usr/local/bin
 RUN chmod 755 /usr/local/bin/opa
 RUN opa version
