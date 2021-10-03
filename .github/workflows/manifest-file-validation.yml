@@ -1,0 +1,14 @@
+name: Validate Manifest Files
+on:
+  push:
+
+jobs:
+  manifest-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Validate Files
+        uses: ravindu-san/automated-manifests-validation@master
+        env:
+          POLICIES_PATH: policies/
+          MANIFESTS_PATH: manifests/ 
