@@ -1,0 +1,12 @@
+name: 'manifest file validator'
+description: 'github action to validate manifest files'
+inputs:
+  POLICIES_PATH:
+    description: 'path to opa policies'
+    required: true
+  MANIFESTS_PATH:
+    description: 'path to manifest files directory'
+    required: true
+runs:
+  using: docker
+  image: 'Dockerfile'
